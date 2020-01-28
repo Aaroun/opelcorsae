@@ -6,25 +6,29 @@
 
 
 
- <style>
-            html {
-                font-size: 19pt;
-            }
+    <style>
+        html {
+            font-size: 15pt;
+            text-align: center;
+        }
+
+        div {
+            font-size: 1em;
             
-            div {
-                font-size: 1em;
-            }
-            
-            strong {
-                font-size: 2em;
-            }
-        </style>
+        }
+
+        strong {
+            font-size: 2em;
+        }
+    </style>
+
+
 
 </head>
 <body>
 <h1> Calcular cuantos km de  autonomia recibes a máxima potencia de carga. <br><br>
 Consumo medio de tu vehículo: <br> 
-<input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus requiredConsumo> kWh<br>
+<input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus requiredConsumo> kWh.<br>
 Potencia de carga <br> 
 <input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required> kW.<br> 
 <input type="button" value="Calcular" onclick="calc()"> 
