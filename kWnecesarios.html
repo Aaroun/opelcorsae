@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
 
 
 
 
- <style>
-            html {
-                font-size: 19pt;
-            }
+    <style>
+        html {
+            font-size: 19pt;
+            text-align: center;
+        }
+
+        div {
+            font-size: 1em;
             
-            div {
-                font-size: 1em;
-            }
-            
-            strong {
-                font-size: 2em;
-            }
-        </style>
+        }
+
+        strong {
+            font-size: 2em;
+        }
+    </style>
 
 
 
@@ -32,33 +35,34 @@
 
 
 </head>
+
 <body>
-<h1> Calcular cuanto vas a necesitar para llegar a tu destino.  <br> 
-km. que necesitas: <br> 
-<input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus required > km.<br><br> 
-Consumo medio de tu vehículo: <br> 
-<input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required > kWh.<br> <br> 
-<input type="button" value="Calcular" onclick="calc()"> 
-<div id="result"></div>
-<script type="text/javascript">
-function calc(){
-var argOne=document.getElementById('arg1').value; 
-var argTwo=document.getElementById('arg2').value;
-var ans=((argTwo*argOne)/100); 
-document.getElementById('result').innerHTML=' Necesitas tener ' + ans +' kWh aprox. ';
-}
-</script>
+    <h1> Calcular cuanto vas a necesitar para llegar <br>a tu destino
+        km. que necesitas: <br>
+        <input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus required> km.<br><br>
+        Consumo medio de tu vehículo: <br>
+        <input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required> kWh.<br> <br>
+        <input type="button" value="Calcular" onclick="calc()">
+        <div id="result"></div>
+        <script type="text/javascript">
+            function calc() {
+                var argOne = document.getElementById('arg1').value;
+                var argTwo = document.getElementById('arg2').value;
+                var ans = ((argTwo * argOne) / 100);
+                document.getElementById('result').innerHTML = ' Necesitas tener ' + ans + ' kWh aprox. ';
+            }
+        </script>
 
 
 
 
-<script type="text/javascript">
-function saltar(e) {
-tecla = (document.all) ? e.keyCode : e.which;
-if (tecla==13) calc();
-}
-</script>
-</h1>
+        <script type="text/javascript">
+            function saltar(e) {
+                tecla = (document.all) ? e.keyCode : e.which;
+                if (tecla == 13) calc();
+            }
+        </script>
+    </h1>
 
 
 
@@ -66,4 +70,5 @@ if (tecla==13) calc();
 
 
 </body>
-</html>   
+
+</html>
