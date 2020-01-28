@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+ <style>
+            html {
+                font-size: 19pt;
+            }
+            
+            div {
+                font-size: 1em;
+            }
+            
+            strong {
+                font-size: 2em;
+            }
+        </style>
+
+</head>
+<body>
+<h1> Calcular cuantos km de  autonomia recibes a máxima potencia de carga. <br><br>
+Consumo medio de tu vehículo: <br> 
+<input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus requiredConsumo> kWh<br>
+Potencia de carga <br> 
+<input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required> kW.<br> 
+<input type="button" value="Calcular" onclick="calc()"> 
+<div id="result"></div>
+<script type="text/javascript">
+function calc(){
+var argOne=document.getElementById('arg1').value; 
+var argTwo=document.getElementById('arg2').value;
+var ans=((argTwo*100)/argOne); 
+
+
+
+document.getElementById('result').innerHTML=' Se están cargando ' + ans.toFixed(0)+' km a la hora. ';
+}
+</script>
+
+
+<script type="text/javascript">
+function saltar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==13) calc();
+}
+</script>
+</h1>
+
+</body>
+</html> 
