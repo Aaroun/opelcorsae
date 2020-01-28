@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+
+
+  <style>
+            html {
+                font-size: 19pt;
+            }
+            
+            div {
+                font-size: 1em;
+            }
+            
+            strong {
+                font-size: 2em;
+            }
+        </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+<h1> Saber la capacidad útil de la batería 
+km que indica el vehiculo que puede recorrer: <br> 
+<input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus required>km <br><br> 
+Consumo medio que indica tu vehículo: <br> 
+<input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required>kWh<br> <br> 
+<input type="button" value="Calcular" onclick="calc()"> 
+<div id="result"></div>
+<script type="text/javascript">
+function calc(){
+var argOne=document.getElementById('arg1').value; 
+var argTwo=document.getElementById('arg2').value;
+var ans=((argTwo*argOne)/100); 
+document.getElementById('result').innerHTML=' Tuvehículo tiene ' + ans +' kWh útiles aprox. ';
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+function saltar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==13) calc();
+}
+</script>
+
+
+</h1>
+
+
+
+
+
+
+</body>
+</html>   
