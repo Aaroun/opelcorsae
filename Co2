@@ -46,8 +46,8 @@
 function calc(){
 var argOne=document.getElementById('arg1').value; 
 var argTwo=document.getElementById('arg2').value;
-var ans=((23*argOne)*argTwo); 
-document.getElementById('result').innerHTML=' Has evitado contaminar ' + ans +' gramos de Co2. ';
+var ans=((23*argOne)*argTwo)/100; 
+document.getElementById('result').innerHTML=' Has evitado contaminar ' + ans +' kg de Co2. ';
 }
 </script>
 
