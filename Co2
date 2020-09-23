@@ -46,7 +46,7 @@
 function calc(){
 var argOne=document.getElementById('arg1').value; 
 var argTwo=document.getElementById('arg2').value;
-var ans=((23.75*argOne)*argTwo); 
+var ans=((23*argOne)*argTwo); 
 document.getElementById('result').innerHTML=' Necesitas tener ' + ans +' kWh aprox. ';
 }
 </script>
