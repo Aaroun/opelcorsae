@@ -35,16 +35,18 @@
 <body>
 <h1> Calcular kg de co2 has ahorrado al planeta con tu EV
 <br> 
+<h1> ¿Cuanto consumía tu coche de combustión?
+<br> 
 <input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus required > l/100km.<br><br> 
-¿Cuanto consumía tu coche de combustión?: <br> 
-<input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required > kWh.<br> <br> 
+¿Cuántos km tiene tu actual VE?: <br> 
+<input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required > km.<br> <br> 
 <input type="button" value="Calcular" onclick="calc()"> 
 <div id="result"></div>
 <script type="text/javascript">
 function calc(){
 var argOne=document.getElementById('arg1').value; 
 var argTwo=document.getElementById('arg2').value;
-var ans=((argTwo*argOne)/100); 
+var ans=((23.75*argOne)*argTwo); 
 document.getElementById('result').innerHTML=' Necesitas tener ' + ans +' kWh aprox. ';
 }
 </script>
