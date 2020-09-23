@@ -33,7 +33,7 @@
 
 </head>
 <body>
-<h1> Calcular kg de co2 has ahorrado al planeta con tu EV
+<h1> Calcular kg de Co2 has ahorrado al planeta con tu EV
 <br> 
 <h1> ¿Cuanto consumía tu coche de combustión?
 <br> 
@@ -47,7 +47,7 @@ function calc(){
 var argOne=document.getElementById('arg1').value; 
 var argTwo=document.getElementById('arg2').value;
 var ans=((23*argOne)*argTwo); 
-document.getElementById('result').innerHTML=' Necesitas tener ' + ans +' kWh aprox. ';
+document.getElementById('result').innerHTML=' Has evitado contaminar ' + ans +' gramos de Co2. ';
 }
 </script>
 
