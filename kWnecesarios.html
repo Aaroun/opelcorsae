@@ -51,6 +51,9 @@ Capacidad total de tuy bateria en kWh: <br>
 <input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required > kWh.<br> <br> 
 <input type="button" value="Calcular" onclick="calc()"> 
 <div id="result"></div>
+
+  
+  
 <script type="text/javascript">
 function calc(){
 var argOne=document.getElementById('arg1').value; 
@@ -58,7 +61,8 @@ var argTwo=document.getElementById('arg2').value;
 var argThree=document.getElementById('arg3').value;
 var ans=((argTwo*argOne)/100); 
 var ans1=(ans*100)/argThree)
-document.getElementById('result').innerHTML=' Necesitas tener ' + ans +' kWh aprox. Un ' + ans1 + '% de batería ';
+document.getElementById('result').innerHTML=' Necesitas tener ' + ans +' kWh aprox.';
+document.getElementById('result').innerHTML=' Un ' + ans1 + '% de batería ';
 }
 </script>
 
