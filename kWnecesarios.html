@@ -43,11 +43,11 @@ background-size: cover;
 </head>
 <body><br> <br> 
 <h1> Calcular cuanto vas a necesitar para llegar a tu destino. <br> <br> 
-km. que necesitas: <br> <br> 
+Kilómetros que que necesitas recorrer: <br> 
 <input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus required > km.<br><br> 
 Consumo medio de tu vehículo: <br> 
-<input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required > kWh.<br> <br> 
-Capacidad total de tuy bateria en kWh: <br> 
+<input type="number" id="arg2" onkeypress="saltar(event)" min="0" max="999" required > kWh./100km.<br> <br> 
+Capacidad total de tu batería: <br> 
 <input type="number" id="arg3" onkeypress="saltar(event)" min="0" max="999" required > kWh.<br> <br> 
 <input type="button" value="Calcular" onclick="calc()"> 
 <div id="result"></div>
@@ -63,8 +63,8 @@ var argThree=document.getElementById('arg3').value;
 var ans=((argTwo*argOne)/100); 
 
 document.getElementById('result').innerHTML=' Necesitas tener ' + ans +' kWh aprox.';
-  var ans1=(ans*100)/argThree)
-document.getElementById('result1').innerHTML=' Un ' + ans1 + '% de batería ';
+  var ans1=((ans*100)/argThree)
+document.getElementById('result1').innerHTML=' Un ' + ans1.toFixed() + '% de batería ';
 }
 </script>
 
