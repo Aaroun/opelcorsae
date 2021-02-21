@@ -9,25 +9,28 @@
 
 
  <style>
-            html {
-                font-size: 19pt;
-            }
+        html {
+            font-size: 15pt;
+            text-align: center;
+        }
+
+        div {
+            font-size: 1em;
             
-            div {
-                font-size: 1em;
-            }
-            
-            strong {
-                font-size: 2em;
-            }
-                      body 
+        }
+
+        strong {
+            font-size: 2em;
+        }
+          
+          body 
        {
 background-image: url('https://img.freepik.com/vector-gratis/fondo-abstracto-blanco-estilo-papel-3d_23-2148390818.jpg');
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
        }
-        </style>
+    </style>
 
 
 
