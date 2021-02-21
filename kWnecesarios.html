@@ -42,7 +42,7 @@ background-size: cover;
 
 </head>
 <body><br> <br> 
-<h1> 1Calcular cuanto vas a necesitar para llegar a tu destino. <br> <br> 
+<h1> Calcular cuanto vas a necesitar para llegar a tu destino. <br> <br> 
 km. que necesitas: <br> <br> 
 <input type="number" id="arg1" onkeypress="saltar(event)" min="0" max="999" autofocus required > km.<br><br> 
 Consumo medio de tu vehículo: <br> 
@@ -60,9 +60,9 @@ var argOne=document.getElementById('arg1').value;
 var argTwo=document.getElementById('arg2').value;
 var argThree=document.getElementById('arg3').value;
 var ans=((argTwo*argOne)/100); 
-var ans1=(ans*100)/argThree)
+//var ans1=(ans*100)/argThree)
 document.getElementById('result').innerHTML=' Necesitas tener ' + ans +' kWh aprox.';
-document.getElementById('result').innerHTML=' Un ' + ans1 + '% de batería ';
+//document.getElementById('result').innerHTML=' Un ' + ans1 + '% de batería ';
 }
 </script>
 
