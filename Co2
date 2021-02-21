@@ -56,7 +56,7 @@ background-size: cover;
 function calc(){
 var argOne=document.getElementById('arg1').value; 
 var argTwo=document.getElementById('arg2').value;
-var ans=((23*argOne)*argTwo)/1000; 
+var ans=((110*argOne)*argTwo)/1000; 
 document.getElementById('result').innerHTML=' Tu coche viejo hubiera emitido ' + ans +' kg de Co2. ';
 }
 </script>
@@ -73,7 +73,7 @@ if (tecla==13) calc();
 </h1>
 
 
-<h1> He tomado de media 23g de Co2 por litro de combustible a los 100
+<h1> He tomado de media 110g de Co2 por litro de combustible a los 100
 <br> 
 
 
