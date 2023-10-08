@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Velocidad Media</title>
+</head>
+<body>
+    <h1>Calculadora de Velocidad Media en m/min</h1>
+    <label for="distancia">Distancia (en kilómetros):</label>
+    <input type="number" id="distancia" step="0.01">
+    <br>
+    <label for="tiempo">Tiempo (en minutos):</label>
+    <input type="number" id="tiempo">
+    <br>
+    <button onclick="calcularVelocidadMedia()">Calcular Velocidad Media</button>
+    <p id="resultado"></p>
+  
+  
+  
+  
+  
+  
+   <h1>Cronómetro con Cálculo de Metros Recorridos</h1>
+    <div id="cronometro">00:00</div>
+    <div id="metrosRecorridos">0 metros</div>
+    <label for="velocidadMediaMMin">Velocidad Media (m/min):</label>
+    <input type="number" id="velocidadMediaMMin" step="0.01">
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="reset">Reset</button>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    <script>
+        function calcularVelocidadMediaEnMetrosPorMinuto(distanciaKm, tiempoMin) {
+            // Convierte la distancia de kilómetros a metros
+            const distanciaMetros = distanciaKm * 1000;
+
+            // Calcula la velocidad media en metros por minuto
+            const velocidadMetrosPorMinuto = distanciaMetros / tiempoMin;
+
+            return velocidadMetrosPorMinuto;
+        }
+
+        function calcularVelocidadMedia() {
+            const distanciaElemento = document.getElementById("distancia");
+            const tiempoElemento = document.getElementById("tiempo");
+            const resultadoElemento = document.getElementById("resultado");
+
+            const distanciaKm = parseFloat(distanciaElemento.value);
+            const tiempoMin = parseFloat(tiempoElemento.value);
+
+            if (isNaN(distanciaKm) || isNaN(tiempoMin)) {
+                resultadoElemento.textContent = "Por favor, ingresa valores válidos.";
+                return;
+            }
+
+            const velocidadMediaMMin = calcularVelocidadMediaEnMetrosPorMinuto(distanciaKm, tiempoMin);
+            resultadoElemento.textContent = `La velocidad media es de ${velocidadMediaMMin.toFixed(0)} metros /min.`;
+        }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        let cronometroInterval;
+        let segundos = 0;
+        let minutos = 0;
+        let metrosRecorridos = 0;
+        let velocidadMediaMMin = 0;
+
+        const cronometroElemento = document.getElementById("cronometro");
+        const metrosRecorridosElemento = document.getElementById("metrosRecorridos");
+        const playButton = document.getElementById("play");
+        const pauseButton = document.getElementById("pause");
+        const resetButton = document.getElementById("reset");
+        const velocidadMediaElemento = document.getElementById("velocidadMediaMMin");
+
+        function iniciarCronometro() {
+            cronometroInterval = setInterval(function() {
+                segundos++;
+                if (segundos === 60) {
+                    segundos = 0;
+                    minutos++;
+                }
+                actualizarCronometro();
+                calcularMetrosRecorridos();
+            }, 1000);
+            playButton.disabled = true;
+            pauseButton.disabled = false;
+            velocidadMediaElemento.disabled = true;
+        }
+
+        function pausarCronometro() {
+            clearInterval(cronometroInterval);
+            playButton.disabled = false;
+            pauseButton.disabled = true;
+            velocidadMediaElemento.disabled = false;
+        }
+
+        function resetearCronometro() {
+            segundos = 0;
+            minutos = 0;
+            metrosRecorridos = 0;
+            actualizarCronometro();
+            actualizarMetrosRecorridos();
+            clearInterval(cronometroInterval);
+            playButton.disabled = false;
+            pauseButton.disabled = false;
+            velocidadMediaElemento.disabled = false;
+        }
+
+        function actualizarCronometro() {
+            const segundosStr = segundos < 10 ? "0" + segundos : segundos;
+            const minutosStr = minutos < 10 ? "0" + minutos : minutos;
+            cronometroElemento.textContent = minutosStr + ":" + segundosStr;
+        }
+
+        function calcularMetrosRecorridos() {
+            velocidadMediaMMin = parseFloat(velocidadMediaElemento.value);
+            metrosRecorridos += velocidadMediaMMin / 60;
+            actualizarMetrosRecorridos();
+        }
+
+        function actualizarMetrosRecorridos() {
+            metrosRecorridosElemento.textContent = metrosRecorridos.toFixed(0) + " metros";
+        }
+
+        playButton.addEventListener("click", iniciarCronometro);
+        pauseButton.addEventListener("click", pausarCronometro);
+        resetButton.addEventListener("click", resetearCronometro);
+        velocidadMediaElemento.addEventListener("change", calcularMetrosRecorridos);
+
+        actualizarCronometro();
+        actualizarMetrosRecorridos();
+     </script>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</body>
+</html>
